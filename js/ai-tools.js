@@ -47,12 +47,12 @@ const AITools = (() => {
       icon: '<img src="icons/copilot.png" alt="Copilot">'
     },
     {
-      id: 'grok',
-      name: 'Grok',
-      url: 'https://grok.x.ai',
-      color: '#ffffff',
+      id: 'notebooklm',
+      name: 'NotebookLM',
+      url: 'https://notebooklm.google.com',
+      color: '#4285f4',
       visible: true,
-      icon: '<img src="icons/grok.png" alt="Grok">'
+      icon: '<img src="icons/google_notebook.png" alt="NotebookLM">'
     }
   ];
 
@@ -74,8 +74,9 @@ const AITools = (() => {
         }
         return def;
       });
-      // Also preserve any custom tools the user might have added
-      const customTools = data.aiTools.filter(t => !DEFAULT_TOOLS.some(def => def.id === t.id));
+      // Also preserve any custom tools the user might have added (ignoring removed defaults)
+      const REMOVED_DEFAULT_IDS = ['poe', 'huggingchat', 'grok'];
+      const customTools = data.aiTools.filter(t => !DEFAULT_TOOLS.some(def => def.id === t.id) && !REMOVED_DEFAULT_IDS.includes(t.id));
       tools.push(...customTools);
     } else {
       tools = [...DEFAULT_TOOLS];
@@ -100,7 +101,7 @@ const AITools = (() => {
       const hasImg = tool.icon && tool.icon.includes('<img');
       icon.className = 'ai-tool-icon' + (hasImg ? ' has-img' : '');
 
-      if (['chatgpt', 'gemini', 'perplexity', 'grok'].includes(tool.id)) {
+      if (['chatgpt', 'gemini', 'perplexity', 'notebooklm'].includes(tool.id)) {
         icon.style.backgroundColor = 'transparent';
         icon.style.borderColor = (tool.color && tool.color.startsWith('#')) ? tool.color + '40' : 'rgba(255, 255, 255, 0.15)';
       } else if (tool.color && tool.color.startsWith('#')) {

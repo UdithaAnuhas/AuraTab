@@ -2109,9 +2109,10 @@ body.search-dropdown-active .bottom-bar {
   transform: scale(1.08);
 }
 
-.ai-tool-icon img[src*="grok"] {
+.ai-tool-icon img[src*="notebook"],
+.ai-tool-icon img[src*="google_notebook"] {
   object-fit: cover;
-  transform: scale(1);
+  transform: scale(1.12);
 }
 
 .ai-tool-name {
