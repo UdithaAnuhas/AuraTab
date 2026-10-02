@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "HomeTab",
+    "message": "AuraTab",
     "description": "The name of the extension"
   },
   "appDescription": {
-    "message": "A premium, customizable new tab homepage with glassmorphism design, weather, todos, bookmarks, and 30+ languages.",
+    "message": "Elevate your browser with AuraTab: a customizable extension that transforms your new tab into a stylish, modern dashboard. It includes advanced personalization, productivity tools, and seamless integrations in one clean layout.",
     "description": "The description of the extension"
   }
 }

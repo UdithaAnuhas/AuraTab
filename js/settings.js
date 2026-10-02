@@ -334,7 +334,7 @@ const Settings = (() => {
 
     const fb = document.createElement('a');
     fb.className = 'settings-pill-btn';
-    fb.href = 'mailto:feedback@hometab.app?subject=HomeTab%20Feedback';
+    fb.href = 'mailto:feedback@auratab.app?subject=AuraTab%20Feedback';
     fb.target = '_blank';
     fb.rel = 'noopener noreferrer';
     fb.innerHTML = `

@@ -1,6 +1,6 @@
-# ✨ HomeTab
+# ✨ AuraTab
 
-> A premium, minimalist new tab homepage for Chromium browsers featuring iOS-inspired glassmorphism, dynamic widgets, intelligent search, and complete personalization.
+> Elevate your browser with AuraTab: a customizable extension that transforms your new tab into a stylish, modern dashboard. It includes advanced personalization features, productivity tools, and seamless integrations—all accessible in one clean, user-friendly layout.
 
 ---
 
@@ -23,13 +23,13 @@
 
 ## 🚀 Installation
 
-HomeTab is built as a standard **Manifest V3** Chrome Extension and runs on any Chromium-based browser (Google Chrome, Microsoft Edge, Brave, Vivaldi, Opera, Arc).
+AuraTab is built as a standard **Manifest V3** Chrome Extension and runs on any Chromium-based browser (Google Chrome, Microsoft Edge, Brave, Vivaldi, Opera, Arc).
 
 ### Load as an Unpacked Extension:
 
 1. **Clone or Download** this repository:
    ```bash
-   git clone https://github.com/your-username/hometab.git
+   git clone https://github.com/your-username/auratab.git
    ```
    *(Or download and extract the ZIP file)*
 
@@ -41,16 +41,16 @@ HomeTab is built as a standard **Manifest V3** Chrome Extension and runs on any 
 
 4. Click the **Load unpacked** button.
 
-5. Select the `Hometab` folder containing `manifest.json`.
+5. Select the `AuraTab` folder containing `manifest.json`.
 
-6. Open a new tab (`Ctrl+T` or `Cmd+T`) — your HomeTab experience is live!
+6. Open a new tab (`Ctrl+T` or `Cmd+T`) — your AuraTab experience is live!
 
 ---
 
 ## 🛠️ Architecture & Project Structure
 
 ```
-Hometab/
+AuraTab/
 ├── manifest.json             # Chrome Manifest V3 configuration & CSP
 ├── newtab.html               # Main application markup
 ├── _locales/                 # Chrome Web Store internationalization
@@ -90,7 +90,7 @@ Hometab/
 
 ## 🔐 Permissions & Security
 
-HomeTab complies strictly with the **Chrome Manifest V3 Content Security Policy (CSP)**. No inline scripts or `eval()` are used.
+AuraTab complies strictly with the **Chrome Manifest V3 Content Security Policy (CSP)**. No inline scripts or `eval()` are used.
 
 | Permission | Purpose |
 | :--- | :--- |
@@ -124,4 +124,4 @@ Inside the **Settings** menu (click the gear icon in the top right), you can con
 
 ## 📄 License
 
-MIT License © 2026 HomeTab Contributors. Free and open source for everyone.
+MIT License © 2026 AuraTab Contributors. Free and open source for everyone.
