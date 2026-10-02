@@ -97,11 +97,12 @@ const AITools = (() => {
       a.rel = 'noopener noreferrer';
 
       const icon = document.createElement('span');
-      icon.className = 'ai-tool-icon';
-      if (tool.id === 'grok') {
-        icon.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-        icon.style.borderColor = 'rgba(var(--accent-rgb, 99, 102, 241), 0.25)';
-        icon.style.color = 'var(--text-primary)';
+      const hasImg = tool.icon && tool.icon.includes('<img');
+      icon.className = 'ai-tool-icon' + (hasImg ? ' has-img' : '');
+
+      if (['chatgpt', 'gemini', 'perplexity', 'grok'].includes(tool.id)) {
+        icon.style.backgroundColor = 'transparent';
+        icon.style.borderColor = (tool.color && tool.color.startsWith('#')) ? tool.color + '40' : 'rgba(255, 255, 255, 0.15)';
       } else if (tool.color && tool.color.startsWith('#')) {
         icon.style.backgroundColor = tool.color + '1a';
         icon.style.borderColor = tool.color + '38';
