@@ -1,6 +1,6 @@
 # ✨ AuraTab
 
-> Elevate your browser with AuraTab: a customizable extension that transforms your new tab into a stylish, modern dashboard. It includes advanced personalization features, productivity tools, and seamless integrations—all accessible in one clean, user-friendly layout.
+> Elevate your browser with AuraTab: a customizable extension that transforms your new tab into a stylish, glassmorphic dashboard. Designed as a beautiful alternative to the cluttered default homepages of most browsers, it includes advanced personalization features, productivity tools, and seamless integrations—all accessible in one clean, user-friendly layout.
 
 ---
 

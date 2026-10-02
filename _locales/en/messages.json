@@ -4,7 +4,7 @@
     "description": "The name of the extension"
   },
   "appDescription": {
-    "message": "Elevate your browser with AuraTab: a customizable extension that transforms your new tab into a stylish, modern dashboard. It includes advanced personalization, productivity tools, and seamless integrations in one clean layout.",
+    "message": "Elevate your browser with AuraTab: a customizable extension that transforms your new tab into a stylish, glassmorphic dashboard. Designed as a beautiful alternative to cluttered default homepages, it features advanced personalization and productivity tools in one clean layout.",
     "description": "The description of the extension"
   }
 }
