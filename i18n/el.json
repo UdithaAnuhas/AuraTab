@@ -1,0 +1,19 @@
+﻿{
+  "goodMorning": "Καλημέρα",
+  "settings": "Settings",
+  "clock": "Clock",
+  "weather": "Weather",
+  "search": "Search",
+  "shortcuts": "Shortcuts",
+  "language": "Language",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "auto": "Auto",
+  "save": "Save",
+  "delete": "Delete",
+  "todoList": "To-Do List",
+  "bookmarks": "Bookmarks",
+  "yourName": "Your name",
+  "offline": "Offline"
+}

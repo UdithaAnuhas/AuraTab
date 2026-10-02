@@ -1,0 +1,10 @@
+{
+  "goodMorning": "Günaydın", "goodAfternoon": "İyi öğleden sonralar", "goodEvening": "İyi akşamlar", "goodNight": "İyi geceler",
+  "settings": "Ayarlar", "appearance": "Görünüm", "wallpaper": "Duvar kağıdı", "clock": "Saat",
+  "weather": "Hava", "search": "Ara", "shortcuts": "Kısayollar", "language": "Dil", "data": "Veri",
+  "theme": "Tema", "light": "Açık", "dark": "Koyu", "auto": "Otomatik", "save": "Kaydet", "delete": "Sil",
+  "cancel": "İptal", "addShortcut": "Kısayol ekle", "addTask": "Görev ekle...",
+  "todoList": "Yapılacaklar", "bookmarks": "Yer imleri", "aiTools": "AI Araçları",
+  "searchWeb": "Web'de ara...", "yourName": "Adınız", "noTodos": "Henüz görev yok",
+  "humidity": "Nem", "wind": "Rüzgar", "offline": "Çevrimdışı"
+}

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png">
+  <link rel="icon" type="image/png" href="icons/Icon.png">
+  <link rel="apple-touch-icon" href="icons/Icon.png">
+  <!-- Theme bootstrap: applies cached theme before first paint -->
+  <script src="js/theme-bootstrap.js"></script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/widgets.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <!-- Wallpaper layer -->
+  <div id="wallpaper-layer" class="wallpaper-layer" aria-hidden="true">
+    <div id="wallpaper-img" class="wallpaper-img"></div>
+    <div id="wallpaper-overlay" class="wallpaper-overlay"></div>
+  </div>
+
+  <!-- Main container -->
+  <main id="main-content" class="main-content">
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <a href="#" class="brand-logo" id="brand-logo" aria-label="HomeTab" title="HomeTab">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 9c4-4 8 4 12 0s8 4 12 0" />
+            <path d="M2 15c4-4 8 4 12 0s8 4 12 0" />
+          </svg>
+        </a>
+
+        <!-- Weather widget -->
+        <div id="weather-widget" class="weather-compact-card" role="status" aria-label="Weather"
+          title="Click to refresh weather">
+          <div class="weather-compact-top">
+            <span id="weather-icon" class="weather-icon" aria-hidden="true"></span>
+            <span id="weather-temp" class="weather-temp">--°</span>
+          </div>
+          <span id="weather-condition" class="weather-compact-location">--</span>
+        </div>
+
+        <!-- Header Clock -->
+        <div id="header-clock-widget" class="header-clock-widget" role="timer" aria-label="Current time">
+          <div id="top-time" class="header-clock-time">00:00</div>
+          <div id="top-date" class="header-clock-date">--</div>
+        </div>
+      </div>
+
+      <div class="top-bar-right">
+        <nav class="top-nav" aria-label="Main Navigation">
+          <a href="#" id="nav-home" class="top-nav-link active">Home</a>
+          <button id="btn-bookmarks" class="top-nav-link" type="button">Bookmarks</button>
+          <button id="btn-google-apps" class="top-nav-link" type="button">Apps</button>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button id="btn-quick-wallpaper" class="icon-btn-ghost" aria-label="Next Wallpaper" title="Next Wallpaper"
+            style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+          </button>
+          <button id="btn-todo" class="icon-btn-ghost" aria-label="To-Do List" title="To-Do List" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </button>
+          <button id="btn-ai-tools" class="icon-btn-ghost" aria-label="AI Tools" title="AI Tools" style="display:none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+              <path d="M5 3v4M3 5h4M19 17v4M17 19h4"/>
+            </svg>
+          </button>
+          <button id="btn-settings" class="icon-btn-ghost btn-settings-gear" aria-label="Open settings"
+            title="Settings">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.32 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Center content -->
+    <div class="center-content">
+      <!-- Greeting & Subtitle Date -->
+      <section id="greeting-widget" class="greeting-section" aria-label="Greeting">
+        <div class="greeting-headline">
+          <span id="greeting-text" class="greeting-text"></span><span id="greeting-comma"
+            class="greeting-comma">,</span>
+          <span id="greeting-name" class="greeting-name" contenteditable="false" role="heading" aria-level="1">Wahal</span>
+        </div>
+        <p id="greeting-date" class="greeting-date"></p>
+      </section>
+
+      <!-- Search -->
+      <section id="search-widget" class="search-section" aria-label="Search">
+        <div id="search-box-wrap" class="search-box-wrap">
+          <div class="search-box" id="search-box">
+            <!-- Left Plus (+) Tools Button & Popup Menu -->
+            <div class="search-add-wrap" id="search-add-wrap">
+              <button id="btn-search-add" class="search-add-btn" type="button" aria-label="Add or tools" title="Add">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div id="search-add-menu" class="search-add-menu" style="display:none;" role="menu">
+                <button id="menu-opt-add-images" class="search-add-menu-item" type="button" role="menuitem">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                  <span>Add images</span>
+                </button>
+                <button id="menu-opt-add-files" class="search-add-menu-item" type="button" role="menuitem">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+                  </svg>
+                  <span>Add files</span>
+                </button>
+                <div class="search-add-divider"></div>
+                <div class="search-add-label">Tools</div>
+                <button id="menu-opt-voice-search" class="search-add-menu-item" type="button" role="menuitem">
+                  <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                    <path fill="#34a853" d="M11 18.92V22h2v-3.08c3.39-.49 6-3.39 6-6.92h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92z"/>
+                  </svg>
+                  <span>Voice search</span>
+                </button>
+                <button id="menu-opt-lens-search" class="search-add-menu-item" type="button" role="menuitem">
+                  <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    <path fill="#ea4335" d="M6.5 17.5a2 2 0 0 1-2-2v-4h-2v4a4 4 0 0 0 4 4h4v-2h-4z"/>
+                    <path fill="#fbbc05" d="M19.5 6.5a2 2 0 0 1 2 2v4h2v-4a4 4 0 0 0-4-4h-4v2h4z"/>
+                    <path fill="#34a853" d="M4.5 6.5a2 2 0 0 1 2-2h4v-2h-4a4 4 0 0 0-4 4v4h2v-4z"/>
+                    <path fill="#4285f4" d="M17.5 19.5a2 2 0 0 1-2 2h-4v2h4a4 4 0 0 0 4-4v-4h-2v4z"/>
+                  </svg>
+                  <span>Search with Lens</span>
+                </button>
+                <button id="menu-opt-create-images" class="search-add-menu-item" type="button" role="menuitem">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                  <span>Create images</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Hidden file inputs -->
+            <input type="file" id="search-image-input" accept="image/*" style="display:none;">
+            <input type="file" id="search-file-input" style="display:none;">
+
+            <input id="search-input" type="text" class="search-input"
+              placeholder="Search Google or type a URL" autocomplete="off" aria-label="Search the web"
+              spellcheck="false">
+
+            <!-- Right controls: AI Mode -->
+            <div class="search-box-actions">
+              <!-- Hidden voice/lens buttons for JS compatibility -->
+              <button id="btn-voice-search" class="search-action-btn search-voice-btn" type="button" style="display:none;"></button>
+              <button id="btn-image-search" class="search-action-btn search-lens-btn" type="button" style="display:none;"></button>
+
+              <!-- AI Mode pill button (shown in standard mode) -->
+              <button id="btn-ai-mode" class="search-ai-btn" type="button" aria-label="Enter AI Mode"
+                title="Ask AI Mode">
+                <span class="ai-aura" aria-hidden="true"></span>
+                <svg class="ai-sparkle-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                </svg>
+                <span>AI Mode</span>
+              </button>
+
+              <!-- Close button (shown INSTEAD of AI Mode button when in AI mode) -->
+              <button id="btn-ai-mode-close" class="search-ai-close-btn" type="button" aria-label="Exit AI Mode" title="Exit AI Mode" style="display:none;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="search-engine-dropdown" class="search-engine-dropdown glass-panel" role="listbox"
+            style="display:none;"></div>
+          <!-- Google Dropdown Menu -->
+          <div id="search-dropdown-menu" class="search-dropdown-menu" style="display:none;" role="listbox"
+            aria-label="Search suggestions">
+            <div id="search-suggestions-list" class="search-suggestions-list"></div>
+            <!-- Standard Dropdown Footer -->
+            <div id="search-dropdown-footer-standard" class="search-dropdown-footer">
+              <div class="dropdown-footer-actions">
+                <button id="btn-clear-history" class="dropdown-clear-btn" type="button">Clear history</button>
+              </div>
+            </div>
+            <!-- AI Mode Dropdown Footer -->
+            <div id="search-dropdown-footer-ai" class="search-dropdown-footer search-dropdown-footer-ai"
+              style="display:none;">
+              <button id="btn-ai-view-history" class="ai-history-footer-btn" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6" />
+                  <line x1="8" y1="12" x2="21" y2="12" />
+                  <line x1="8" y1="18" x2="21" y2="18" />
+                  <path d="M3 18l.6 1.3 1.3.6-1.3.6-.6 1.3-.6-1.3-1.3-.6 1.3-.6z" fill="currentColor" stroke="none" />
+                </svg>
+                <span>View your AI Mode history</span>
+              </button>
+            </div>
+          </div>
+          <!-- Google Lens Modal -->
+          <div id="search-lens-modal" class="search-lens-modal" style="display:none;" role="dialog"
+            aria-label="Search by image">
+            <div class="lens-header">
+              <div class="lens-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4 4h3V2H4C2.9 2 2 2.9 2 4v3h2V4zm16-2h-3v2h3v3h2V4c0-1.1-.9-2-2-2zm0 18h-3v2h3c1.1 0 2-.9 2-2v-3h-2v3zM4 17H2v3c0 1.1.9 2 2 2h3v-2H4v-3z" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="18" cy="18" r="1.5" />
+                </svg>
+                <span>Search any image with Google Lens</span>
+              </div>
+              <button id="btn-lens-close" class="lens-close-btn" type="button" aria-label="Close">×</button>
+            </div>
+            <div class="lens-dropzone" id="lens-dropzone">
+              <div class="lens-dropzone-inner">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <p>Drag an image here or <button type="button" id="btn-lens-browse" class="lens-browse-link">upload a
+                    file</button></p>
+                <input type="file" id="lens-file-input" accept="image/*" style="display:none;">
+              </div>
+            </div>
+            <div class="lens-divider"><span>OR</span></div>
+            <div class="lens-url-row">
+              <input type="url" id="lens-url-input" class="lens-url-input" placeholder="Paste image link...">
+              <button type="button" id="btn-lens-search-url" class="lens-url-btn">Search</button>
+            </div>
+            <div class="lens-footer-row">
+              <a href="https://images.google.com/" target="_blank" class="lens-web-link" id="btn-lens-direct">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Open Google Lens Desktop</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shortcuts -->
+      <section id="shortcuts-widget" class="shortcuts-section" aria-label="Shortcuts">
+        <div id="shortcuts-grid" class="shortcuts-grid"></div>
+        <div class="shortcuts-pagination" aria-hidden="true">
+          <span class="page-dot"></span>
+          <span class="page-dot active"></span>
+          <span class="page-dot"></span>
+        </div>
+        <!-- Hidden button preserved for JS backward compatibility -->
+        <button id="btn-add-shortcut" class="add-shortcut-btn glass-pill" aria-label="Add shortcut"
+          style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+          <span data-i18n="addShortcut">Add shortcut</span>
+        </button>
+      </section>
+    </div>
+
+    <!-- Bottom bar -->
+    <footer class="bottom-bar">
+      <div class="bottom-bar-left"></div>
+      <div class="bottom-bar-center"></div>
+      <div class="bottom-bar-right">
+        <button id="btn-clock-toggle" class="icon-btn-ghost" aria-label="Toggle clock style" title="Toggle clock"
+          style="display:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </main>
+
+  <!-- AI Tools Popover -->
+  <div id="ai-tools-popover" class="popover glass-panel" role="dialog" aria-label="AI Tools" style="display:none;">
+    <div class="popover-header">
+      <div class="ai-tools-header-title">
+        <svg class="ai-tools-title-sparkle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+        </svg>
+        <h2 data-i18n="aiTools">AI Tools</h2>
+      </div>
+      <button class="popover-close icon-btn" aria-label="Close" data-close="ai-tools-popover">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div id="ai-tools-list" class="ai-tools-list"></div>
+  </div>
+
+  <!-- Google Apps Popover -->
+  <div id="google-apps-popover" class="popover glass-panel google-apps-popover" role="dialog" aria-label="Google Apps"
+    style="display:none;">
+    <div class="gapps-header">
+      <span class="gapps-title">Your favorites</span>
+      <button id="btn-gapps-edit" class="gapps-edit-btn" type="button" title="Customize favorites" aria-label="Customize favorites">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+        </svg>
+      </button>
+    </div>
+    <div id="gapps-edit-hint" class="gapps-edit-hint" style="display:none;">Click app to add/remove, or drag to reorder</div>
+    <div class="gapps-scroll-area">
+      <div class="gapps-fav-card">
+        <div id="google-apps-fav-grid" class="google-apps-grid"></div>
+      </div>
+      <div id="google-apps-more-grid" class="google-apps-grid"></div>
+    </div>
+  </div>
+
+  <!-- Todo Panel -->
+  <div id="todo-panel" class="side-panel glass-panel" role="dialog" aria-label="To-Do List" style="display:none;">
+    <div class="panel-header">
+      <h2 data-i18n="todoList">To-Do List</h2>
+      <button class="popover-close icon-btn" aria-label="Close" data-close="todo-panel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="todo-input-row">
+      <input id="todo-input" type="text" class="todo-input glass-input" placeholder="Add a task..."
+        aria-label="Add a task" data-i18n-placeholder="addTask">
+      <input id="todo-date" type="date" class="todo-date glass-input" aria-label="Due date">
+      <button id="btn-add-todo" class="btn-accent" aria-label="Add">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+      </button>
+    </div>
+    <ul id="todo-list" class="todo-list" role="list"></ul>
+    <div class="todo-footer">
+      <button id="btn-clear-completed" class="btn-ghost" data-i18n="clearCompleted">Clear completed</button>
+    </div>
+  </div>
+
+  <!-- Bookmarks Panel -->
+  <div id="bookmarks-panel" class="side-panel side-panel-right glass-panel" role="dialog" aria-label="Bookmarks"
+    style="display:none;">
+    <div class="panel-header">
+      <h2 data-i18n="bookmarks">Bookmarks</h2>
+      <div class="panel-header-actions">
+        <div class="bookmark-add-wrap">
+          <button id="btn-add-bookmark" class="icon-btn" aria-label="Add new" title="Add new...">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div id="bookmark-add-menu" class="bookmark-add-menu" style="display: none;" role="menu" aria-label="Add new">
+            <button type="button" class="bookmark-add-menu-item" id="btn-add-item-bookmark" role="menuitem">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+              <span>Bookmark</span>
+            </button>
+            <button type="button" class="bookmark-add-menu-item" id="btn-add-item-folder" role="menuitem">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Folder</span>
+            </button>
+          </div>
+        </div>
+        <button class="popover-close icon-btn" aria-label="Close" data-close="bookmarks-panel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <input id="bookmark-search" type="text" class="bookmark-search glass-input" placeholder="Search bookmarks..."
+      aria-label="Search bookmarks" data-i18n-placeholder="searchBookmarks">
+    <div id="bookmark-breadcrumb" class="bookmark-breadcrumb"></div>
+    <ul id="bookmark-list" class="bookmark-list" role="tree"></ul>
+  </div>
+
+  <!-- Bookmark Context Menu -->
+  <div id="bookmark-context-menu" class="bookmark-context-menu" style="display: none;" role="menu" aria-label="Bookmark actions">
+    <button class="context-menu-item" id="bkm-ctx-add" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <span class="context-menu-label">Add new bookmark...</span>
+    </button>
+    <button class="context-menu-item" id="bkm-ctx-add-folder" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        <line x1="12" y1="11" x2="12" y2="17"></line>
+        <line x1="9" y1="14" x2="15" y2="14"></line>
+      </svg>
+      <span class="context-menu-label">Add new folder...</span>
+    </button>
+    <div class="context-menu-divider" id="bkm-ctx-div-0"></div>
+    <button class="context-menu-item" id="bkm-ctx-open" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+      <span class="context-menu-label" id="bkm-ctx-open-label">Open in new tab</span>
+    </button>
+    <button class="context-menu-item" id="bkm-ctx-new-window" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+      <span class="context-menu-label">Open in new window</span>
+    </button>
+    <button class="context-menu-item" id="bkm-ctx-incognito" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10h18l-2-6H5l-2 6z"></path>
+        <circle cx="8" cy="16" r="3"></circle>
+        <circle cx="16" cy="16" r="3"></circle>
+        <path d="M11 16h2"></path>
+      </svg>
+      <span class="context-menu-label">Open in Incognito window</span>
+    </button>
+    <div class="context-menu-divider" id="bkm-ctx-div-1"></div>
+    <button class="context-menu-item" id="bkm-ctx-edit" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+      </svg>
+      <span class="context-menu-label" id="bkm-ctx-edit-label">Edit...</span>
+    </button>
+    <button class="context-menu-item" id="bkm-ctx-copy" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <span class="context-menu-label">Copy link address</span>
+    </button>
+    <div class="context-menu-divider" id="bkm-ctx-div-2"></div>
+    <button class="context-menu-item context-menu-danger" id="bkm-ctx-delete" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="3 6 5 6 21 6"></polyline>
+        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        <line x1="10" y1="11" x2="10" y2="17"></line>
+        <line x1="14" y1="11" x2="14" y2="17"></line>
+      </svg>
+      <span class="context-menu-label" id="bkm-ctx-delete-label">Delete</span>
+    </button>
+    <div class="context-menu-divider" id="bkm-ctx-div-3"></div>
+    <button class="context-menu-item" id="bkm-ctx-manager" role="menuitem">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+      <span class="context-menu-label">Open bookmark manager</span>
+    </button>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settings-panel" class="settings-panel side-panel-right glass-panel" role="dialog" aria-label="Settings" style="display:none;">
+    <div class="panel-header">
+      <h2 data-i18n="settings">Settings</h2>
+      <button class="popover-close icon-btn" aria-label="Close" data-close="settings-panel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="settings-body" id="settings-body"></div>
+  </div>
+
+  <!-- Shortcut Edit Modal -->
+  <div id="shortcut-modal" class="modal-overlay" style="display:none;" role="dialog" aria-label="Edit shortcut">
+    <div class="modal glass-panel">
+      <div class="modal-header">
+        <h3 id="shortcut-modal-title" data-i18n="addShortcut">Add Shortcut</h3>
+        <button class="popover-close icon-btn" aria-label="Close" data-close="shortcut-modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="shortcut-name-input" data-i18n="name">Name</label>
+        <input id="shortcut-name-input" type="text" class="glass-input" placeholder="YouTube">
+        <label for="shortcut-url-input" data-i18n="url">URL</label>
+        <input id="shortcut-url-input" type="url" class="glass-input" placeholder="https://youtube.com">
+      </div>
+      <div class="modal-footer">
+        <button id="shortcut-delete-btn" class="btn-ghost btn-danger" data-i18n="delete"
+          style="display:none;">Delete</button>
+        <button id="shortcut-save-btn" class="btn-accent" data-i18n="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmark Edit Modal (Matches Browser Default Edit Section) -->
+  <div id="bookmark-edit-modal" class="modal-overlay" style="display:none;" role="dialog" aria-label="Edit bookmark">
+    <div class="modal glass-panel bookmark-modal-panel">
+      <div class="modal-header">
+        <h3 id="bookmark-edit-modal-title">Edit bookmark</h3>
+        <div class="modal-header-actions">
+          <button id="bookmark-edit-open-manager-btn" class="icon-btn" type="button" aria-label="Open in browser Bookmark Manager" title="Open in browser Bookmark Manager">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </button>
+          <button class="popover-close icon-btn" aria-label="Close" data-close="bookmark-edit-modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <form id="bookmark-edit-form" class="modal-body bookmark-modal-body">
+        <div class="bookmark-form-row">
+          <label for="bookmark-edit-title-input">Name</label>
+          <input id="bookmark-edit-title-input" type="text" class="glass-input" required autocomplete="off" placeholder="Name">
+        </div>
+        <div id="bookmark-edit-url-group" class="bookmark-form-row">
+          <label for="bookmark-edit-url-input">URL</label>
+          <input id="bookmark-edit-url-input" type="url" class="glass-input" autocomplete="off" placeholder="https://example.com">
+        </div>
+
+        <!-- Folder tree picker matching browser default edit section -->
+        <div id="bookmark-folder-tree-section" class="bookmark-form-row bookmark-folder-section">
+          <label id="bookmark-folder-tree-label">Folder</label>
+          <div id="bookmark-folder-tree" class="bookmark-folder-tree" role="tree" tabindex="0"></div>
+        </div>
+      </form>
+      <div class="modal-footer bookmark-modal-footer">
+        <div class="bookmark-footer-left">
+          <button id="bookmark-edit-new-folder-btn" type="button" class="btn-pill-ghost">New folder</button>
+          <button id="bookmark-edit-delete-folder-btn" type="button" class="btn-pill-ghost btn-pill-danger" style="display:none;" title="Delete selected folder">Delete folder</button>
+        </div>
+        <div class="bookmark-footer-actions">
+          <button id="bookmark-edit-save-btn" type="button" class="btn-pill-accent">Save</button>
+          <button id="bookmark-edit-cancel-btn" type="button" class="btn-pill-ghost">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/wallpaper.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/shortcuts.js"></script>
+  <script src="js/ai-tools.js"></script>
+  <script src="js/panels.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/bookmarks.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

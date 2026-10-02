@@ -1,0 +1,186 @@
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--sp-3);
+  }
+
+  .clock-time {
+    font-size: var(--fs-4xl);
+  }
+
+  .greeting-headline {
+    font-size: 1.85rem;
+  }
+
+  .shortcuts-grid {
+    gap: 14px 16px;
+  }
+
+  .side-panel {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .settings-panel {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .popover {
+    left: var(--sp-3) !important;
+    right: var(--sp-3) !important;
+    max-width: calc(100vw - var(--sp-6));
+    min-width: auto;
+  }
+
+  .ai-tools-list {
+    grid-template-columns: 1fr;
+  }
+
+  .google-apps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .theme-presets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .weather-popover {
+    left: var(--sp-3) !important;
+    right: var(--sp-3) !important;
+    transform: none;
+    max-width: calc(100vw - var(--sp-6));
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  .clock-time {
+    font-size: var(--fs-3xl);
+  }
+
+  .greeting-text {
+    font-size: var(--fs-base);
+  }
+
+  .greeting-headline {
+    font-size: 1.5rem;
+  }
+
+  .greeting-date {
+    font-size: 12px;
+  }
+
+  .header-clock-widget {
+    padding: 2px 4px;
+  }
+
+  .shortcuts-grid {
+    gap: 12px 14px;
+  }
+
+  .shortcut-tile {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+  }
+
+  .shortcut-tile svg,
+  .shortcut-tile img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .shortcut-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .search-box {
+    padding: var(--sp-2) var(--sp-3);
+  }
+
+  .search-hint {
+    display: none;
+  }
+
+  .search-ai-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .search-ai-close-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .top-bar,
+  .bottom-bar {
+    padding: var(--sp-1) var(--sp-2);
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .weather-widget {
+    padding: var(--sp-1) var(--sp-3);
+    font-size: var(--fs-xs);
+  }
+
+  .weather-condition {
+    display: none;
+  }
+
+  .modal {
+    max-width: calc(100vw - var(--sp-6));
+  }
+
+  .todo-date {
+    display: none;
+  }
+
+  .theme-presets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Ultrawide */
+@media (min-width: 1920px) {
+  .center-content {
+    max-width: 800px;
+  }
+
+  .clock-time {
+    font-size: 7rem;
+  }
+
+  .shortcuts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+}
+
+/* Tall screens */
+@media (min-height: 900px) {
+  .center-content {
+    gap: var(--sp-8);
+  }
+}
+
+/* Short screens */
+@media (max-height: 600px) {
+  .center-content {
+    gap: var(--sp-3);
+  }
+
+  .clock-time {
+    font-size: var(--fs-3xl);
+  }
+
+  .greeting-section {
+    display: none;
+  }
+}

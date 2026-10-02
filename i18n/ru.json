@@ -1,0 +1,10 @@
+{
+  "goodMorning": "Доброе утро", "goodAfternoon": "Добрый день", "goodEvening": "Добрый вечер", "goodNight": "Спокойной ночи",
+  "settings": "Настройки", "appearance": "Внешний вид", "wallpaper": "Обои", "clock": "Часы",
+  "weather": "Погода", "search": "Поиск", "shortcuts": "Ярлыки", "language": "Язык", "data": "Данные",
+  "theme": "Тема", "light": "Светлая", "dark": "Тёмная", "auto": "Авто", "save": "Сохранить", "delete": "Удалить",
+  "cancel": "Отмена", "addShortcut": "Добавить ярлык", "addTask": "Добавить задачу...",
+  "todoList": "Список дел", "bookmarks": "Закладки", "aiTools": "ИИ инструменты",
+  "searchWeb": "Поиск в интернете...", "yourName": "Ваше имя", "noTodos": "Пока нет задач",
+  "humidity": "Влажность", "wind": "Ветер", "offline": "Офлайн"
+}

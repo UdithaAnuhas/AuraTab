@@ -1,0 +1,29 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Node / NPM
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs & Temporary
+*.log
+*.tmp
+scratch/
+.temp/
+
+# AI IDE / Antigravity metadata
+.gemini/
+.agents/

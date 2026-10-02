@@ -1,0 +1,65 @@
+/* ===== HOMETAB EMBEDDED TYPOGRAPHY ===== */
+
+/* Outfit - Ultra-sleek, clean geometric sans with perfect circular curves (Variable 100-900) */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/outfit.woff2') format('woff2');
+}
+
+/* Space Grotesk - Futuristic cyberpunk/tech grotesk with distinctive shapes (Variable 300-700) */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/spacegrotesk.woff2') format('woff2');
+}
+
+/* Urbanist - Minimal neo-grotesque digital aesthetic (Variable 100-900) */
+@font-face {
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/urbanist.woff2') format('woff2');
+}
+
+/* Orbitron - Cyberpunk HUD & sci-fi digital display (Variable 400-900) */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('../fonts/orbitron.woff2') format('woff2');
+}
+
+/* Plus Jakarta Sans - Apple iOS Lockscreen style geometric sans (Variable 200-800) */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('../fonts/plusjakartasans.woff2') format('woff2');
+}
+
+/* Inter - Ultra-crisp, elegant minimalist sans (Variable 100-900) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/inter.woff2') format('woff2');
+}
+
+/* Comico - User requested font */
+@font-face {
+  font-family: 'Comico';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/comico.woff2') format('woff2');
+}
+

@@ -1,0 +1,10 @@
+{
+  "goodMorning": "Buongiorno", "goodAfternoon": "Buon pomeriggio", "goodEvening": "Buonasera", "goodNight": "Buonanotte",
+  "settings": "Impostazioni", "appearance": "Aspetto", "wallpaper": "Sfondo", "clock": "Orologio",
+  "weather": "Meteo", "search": "Cerca", "shortcuts": "Scorciatoie", "language": "Lingua", "data": "Dati",
+  "theme": "Tema", "light": "Chiaro", "dark": "Scuro", "auto": "Auto", "save": "Salva", "delete": "Elimina",
+  "cancel": "Annulla", "addShortcut": "Aggiungi scorciatoia", "addTask": "Aggiungi attività...",
+  "todoList": "Lista attività", "bookmarks": "Segnalibri", "aiTools": "Strumenti IA",
+  "searchWeb": "Cerca nel web...", "yourName": "Il tuo nome", "noTodos": "Nessuna attività",
+  "humidity": "Umidità", "wind": "Vento", "offline": "Offline"
+}

@@ -1,0 +1,10 @@
+{
+  "goodMorning": "좋은 아침", "goodAfternoon": "좋은 오후", "goodEvening": "좋은 저녁", "goodNight": "안녕히 주무세요",
+  "settings": "설정", "appearance": "외관", "wallpaper": "배경화면", "clock": "시계",
+  "weather": "날씨", "search": "검색", "shortcuts": "바로가기", "language": "언어", "data": "데이터",
+  "theme": "테마", "light": "라이트", "dark": "다크", "auto": "자동", "save": "저장", "delete": "삭제",
+  "cancel": "취소", "addShortcut": "바로가기 추가", "addTask": "할 일 추가...",
+  "todoList": "할 일 목록", "bookmarks": "북마크", "aiTools": "AI 도구",
+  "searchWeb": "웹 검색...", "yourName": "이름", "noTodos": "아직 할 일이 없습니다",
+  "humidity": "습도", "wind": "바람", "offline": "오프라인"
+}

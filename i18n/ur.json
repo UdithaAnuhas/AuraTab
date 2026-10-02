@@ -1,0 +1,10 @@
+{
+  "goodMorning": "صبح بخیر", "goodAfternoon": "دوپہر بخیر", "goodEvening": "شام بخیر", "goodNight": "شب بخیر",
+  "settings": "ترتیبات", "appearance": "ظاہری شکل", "wallpaper": "وال پیپر", "clock": "گھڑی",
+  "weather": "موسم", "search": "تلاش", "shortcuts": "شارٹ کٹ", "language": "زبان", "data": "ڈیٹا",
+  "theme": "تھیم", "light": "ہلکا", "dark": "گہرا", "auto": "خودکار", "save": "محفوظ کریں", "delete": "حذف کریں",
+  "cancel": "منسوخ", "addShortcut": "شارٹ کٹ شامل کریں", "addTask": "کام شامل کریں...",
+  "todoList": "کام کی فہرست", "bookmarks": "بُک مارکس", "aiTools": "AI ٹولز",
+  "searchWeb": "ویب پر تلاش کریں...", "yourName": "آپ کا نام", "noTodos": "ابھی کوئی کام نہیں",
+  "humidity": "نمی", "wind": "ہوا", "offline": "آف لائن"
+}

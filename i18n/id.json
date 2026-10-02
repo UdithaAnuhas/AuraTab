@@ -1,0 +1,8 @@
+{
+  "goodMorning": "Selamat pagi", "goodAfternoon": "Selamat siang", "goodEvening": "Selamat sore", "goodNight": "Selamat malam",
+  "settings": "Pengaturan", "clock": "Jam", "weather": "Cuaca", "search": "Cari", "shortcuts": "Pintasan",
+  "language": "Bahasa", "theme": "Tema", "light": "Terang", "dark": "Gelap", "auto": "Otomatis",
+  "save": "Simpan", "delete": "Hapus", "cancel": "Batal", "addTask": "Tambah tugas...",
+  "todoList": "Daftar Tugas", "bookmarks": "Penanda", "searchWeb": "Cari di web...",
+  "yourName": "Nama Anda", "noTodos": "Belum ada tugas", "offline": "Offline"
+}

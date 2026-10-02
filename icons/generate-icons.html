@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate Icons</title></head>
+<body>
+<h2>HomeTab Icon Generator</h2>
+<p>Click each button to download the icon, then place it in the icons/ folder.</p>
+<canvas id="c" style="display:none;"></canvas>
+<div id="links"></div>
+<script>
+function generateIcon(size) {
+  const c = document.getElementById('c');
+  c.width = size; c.height = size;
+  const ctx = c.getContext('2d');
+  
+  // Background circle with gradient
+  const grad = ctx.createLinearGradient(0, 0, size, size);
+  grad.addColorStop(0, '#6366f1');
+  grad.addColorStop(1, '#818cf8');
+  
+  ctx.beginPath();
+  ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+  ctx.fillStyle = grad;
+  ctx.fill();
+  
+  // Inner highlight
+  const igr = ctx.createRadialGradient(size*0.35, size*0.3, 0, size/2, size/2, size/2);
+  igr.addColorStop(0, 'rgba(255,255,255,0.3)');
+  igr.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = igr;
+  ctx.fill();
+  
+  // Letter "H"
+  ctx.fillStyle = 'white';
+  ctx.font = `bold ${size * 0.5}px system-ui, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('H', size/2, size/2 + size*0.02);
+  
+  return c.toDataURL('image/png');
+}
+
+[16, 48, 128].forEach(size => {
+  const dataUrl = generateIcon(size);
+  const a = document.createElement('a');
+  a.href = dataUrl;
+  a.download = `icon-${size}.png`;
+  a.textContent = `Download icon-${size}.png`;
+  a.style.display = 'block';
+  a.style.margin = '8px';
+  document.getElementById('links').appendChild(a);
+  a.click(); // Auto-download
+});
+</script>
+</body>
+</html>

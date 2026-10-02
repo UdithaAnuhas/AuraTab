@@ -1,0 +1,120 @@
+/* ===== CURATED THEME PRESETS ===== */
+
+/* Theme presets are applied via data-theme-preset attribute */
+/* Each preset sets --accent plus tonal overrides */
+
+[data-preset="midnight"] {
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-dim: rgba(99, 102, 241, 0.15);
+  --accent-rgb: 99, 102, 241;
+}
+
+[data-preset="aurora"] {
+  --accent: #06b6d4;
+  --accent-hover: #22d3ee;
+  --accent-dim: rgba(6, 182, 212, 0.15);
+  --accent-rgb: 6, 182, 212;
+}
+
+[data-preset="sunset"] {
+  --accent: #f97316;
+  --accent-hover: #fb923c;
+  --accent-dim: rgba(249, 115, 22, 0.15);
+  --accent-rgb: 249, 115, 22;
+}
+
+[data-preset="forest"] {
+  --accent: #22c55e;
+  --accent-hover: #4ade80;
+  --accent-dim: rgba(34, 197, 94, 0.15);
+  --accent-rgb: 34, 197, 94;
+}
+
+[data-preset="rose"] {
+  --accent: #f43f5e;
+  --accent-hover: #fb7185;
+  --accent-dim: rgba(244, 63, 94, 0.15);
+  --accent-rgb: 244, 63, 94;
+}
+
+[data-preset="mono"] {
+  --accent: #71717a;
+  --accent-hover: #a1a1aa;
+  --accent-dim: rgba(113, 113, 122, 0.15);
+  --accent-rgb: 113, 113, 122;
+}
+
+[data-preset="ocean"] {
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-dim: rgba(59, 130, 246, 0.15);
+  --accent-rgb: 59, 130, 246;
+}
+
+[data-preset="lavender"] {
+  --accent: #a78bfa;
+  --accent-hover: #c4b5fd;
+  --accent-dim: rgba(167, 139, 250, 0.15);
+  --accent-rgb: 167, 139, 250;
+}
+
+[data-preset="cherry"] {
+  --accent: #e11d48;
+  --accent-hover: #fb7185;
+  --accent-dim: rgba(225, 29, 72, 0.15);
+  --accent-rgb: 225, 29, 72;
+}
+
+[data-preset="gold"] {
+  --accent: #eab308;
+  --accent-hover: #facc15;
+  --accent-dim: rgba(234, 179, 8, 0.15);
+  --accent-rgb: 234, 179, 8;
+}
+
+[data-preset="teal"] {
+  --accent: #14b8a6;
+  --accent-hover: #2dd4bf;
+  --accent-dim: rgba(20, 184, 166, 0.15);
+  --accent-rgb: 20, 184, 166;
+}
+
+[data-preset="ember"] {
+  --accent: #dc2626;
+  --accent-hover: #ef4444;
+  --accent-dim: rgba(220, 38, 38, 0.15);
+  --accent-rgb: 220, 38, 38;
+}
+
+/* ===== AUTO THEME (system preference) ===== */
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    --bg: #0a0a14;
+    --surface: rgba(30, 30, 50, 0.65);
+    --surface-hover: rgba(40, 40, 65, 0.8);
+    --surface-solid: #1a1a2e;
+    --text-primary: #f0f0f5;
+    --text-secondary: rgba(240, 240, 245, 0.65);
+    --text-tertiary: rgba(240, 240, 245, 0.35);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-strong: rgba(0, 0, 0, 0.5);
+    --overlay: rgba(0, 0, 0, 0.6);
+    --scrim: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Wallpaper active - text must be readable */
+[data-wallpaper-active="true"] {
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-tertiary: rgba(255, 255, 255, 0.45);
+}
+
+[data-wallpaper-active="true"][data-wallpaper-light="true"] {
+  --text-primary: #1a1a2e;
+  --text-secondary: rgba(26, 26, 46, 0.75);
+  --text-tertiary: rgba(26, 26, 46, 0.45);
+}
