@@ -104,13 +104,23 @@ const Theme = (() => {
     return tones;
   }
 
-  /** Derive accent hover and dim colors */
+  /** Derive accent hover, dim, and high-contrast text colors */
   function deriveAccentVariants(hex) {
     const rgb = hexToRgb(hex);
     const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
     const hover = hslToHex(hsl.h, Math.min(100, hsl.s * 1.05), Math.min(85, hsl.l + 12));
     const dim = hex + '26'; // ~15% alpha
-    return { hover, dim };
+
+    // Calculate relative luminance per WCAG 2.1 standard
+    const [r, g, b] = [rgb.r, rgb.g, rgb.b].map(v => {
+      v /= 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    // Bright accents (like Gold, Aurora Cyan, Lime, Teal) get deep slate text (#0b0f19)
+    const text = luminance > 0.36 ? '#0b0f19' : '#ffffff';
+
+    return { hover, dim, text };
   }
 
   /** Apply accent color to CSS */
@@ -119,12 +129,13 @@ const Theme = (() => {
     if (!hex.startsWith('#')) hex = '#' + hex;
     const rgb = hexToRgb(hex);
     if (!rgb || isNaN(rgb.r)) return;
-    const { hover, dim } = deriveAccentVariants(hex);
+    const { hover, dim, text } = deriveAccentVariants(hex);
     const root = document.documentElement;
     root.style.setProperty('--accent', hex);
     root.style.setProperty('--accent-hover', hover);
     root.style.setProperty('--accent-dim', dim);
     root.style.setProperty('--accent-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
+    root.style.setProperty('--accent-text', text);
     currentAccent = hex;
   }
 

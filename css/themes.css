@@ -8,6 +8,7 @@
   --accent-hover: #818cf8;
   --accent-dim: rgba(99, 102, 241, 0.15);
   --accent-rgb: 99, 102, 241;
+  --accent-text: #ffffff;
 }
 
 [data-preset="aurora"] {
@@ -15,6 +16,7 @@
   --accent-hover: #22d3ee;
   --accent-dim: rgba(6, 182, 212, 0.15);
   --accent-rgb: 6, 182, 212;
+  --accent-text: #0b0f19;
 }
 
 [data-preset="sunset"] {
@@ -22,6 +24,7 @@
   --accent-hover: #fb923c;
   --accent-dim: rgba(249, 115, 22, 0.15);
   --accent-rgb: 249, 115, 22;
+  --accent-text: #ffffff;
 }
 
 [data-preset="forest"] {
@@ -29,6 +32,7 @@
   --accent-hover: #4ade80;
   --accent-dim: rgba(34, 197, 94, 0.15);
   --accent-rgb: 34, 197, 94;
+  --accent-text: #0b0f19;
 }
 
 [data-preset="rose"] {
@@ -36,6 +40,7 @@
   --accent-hover: #fb7185;
   --accent-dim: rgba(244, 63, 94, 0.15);
   --accent-rgb: 244, 63, 94;
+  --accent-text: #ffffff;
 }
 
 [data-preset="mono"] {
@@ -43,6 +48,7 @@
   --accent-hover: #a1a1aa;
   --accent-dim: rgba(113, 113, 122, 0.15);
   --accent-rgb: 113, 113, 122;
+  --accent-text: #ffffff;
 }
 
 [data-preset="ocean"] {
@@ -50,6 +56,7 @@
   --accent-hover: #60a5fa;
   --accent-dim: rgba(59, 130, 246, 0.15);
   --accent-rgb: 59, 130, 246;
+  --accent-text: #ffffff;
 }
 
 [data-preset="lavender"] {
@@ -57,6 +64,7 @@
   --accent-hover: #c4b5fd;
   --accent-dim: rgba(167, 139, 250, 0.15);
   --accent-rgb: 167, 139, 250;
+  --accent-text: #ffffff;
 }
 
 [data-preset="cherry"] {
@@ -64,6 +72,7 @@
   --accent-hover: #fb7185;
   --accent-dim: rgba(225, 29, 72, 0.15);
   --accent-rgb: 225, 29, 72;
+  --accent-text: #ffffff;
 }
 
 [data-preset="gold"] {
@@ -71,6 +80,7 @@
   --accent-hover: #facc15;
   --accent-dim: rgba(234, 179, 8, 0.15);
   --accent-rgb: 234, 179, 8;
+  --accent-text: #0b0f19;
 }
 
 [data-preset="teal"] {
@@ -78,6 +88,7 @@
   --accent-hover: #2dd4bf;
   --accent-dim: rgba(20, 184, 166, 0.15);
   --accent-rgb: 20, 184, 166;
+  --accent-text: #0b0f19;
 }
 
 [data-preset="ember"] {
@@ -85,6 +96,7 @@
   --accent-hover: #ef4444;
   --accent-dim: rgba(220, 38, 38, 0.15);
   --accent-rgb: 220, 38, 38;
+  --accent-text: #ffffff;
 }
 
 /* ===== AUTO THEME (system preference) ===== */
