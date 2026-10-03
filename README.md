@@ -29,7 +29,7 @@ AuraTab is built as a standard **Manifest V3** Chrome Extension and runs on any 
 
 1. **Clone or Download** this repository:
    ```bash
-   git clone https://github.com/your-username/auratab.git
+   git clone https://github.com/UdithaAnuhas/AuraTab.git
    ```
    *(Or download and extract the ZIP file)*
 

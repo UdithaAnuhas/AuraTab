@@ -321,30 +321,48 @@ const Settings = (() => {
     wrap.className = 'settings-top-actions';
 
     const gh = document.createElement('a');
-    gh.className = 'settings-pill-btn';
-    gh.href = 'https://github.com';
+    gh.className = 'settings-pill-btn settings-btn-github';
+    gh.href = 'https://github.com/UdithaAnuhas/AuraTab';
     gh.target = '_blank';
     gh.rel = 'noopener noreferrer';
+    gh.title = 'Star AuraTab on GitHub';
     gh.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
       </svg>
       <span>GitHub</span>
     `;
 
+    const pf = document.createElement('a');
+    pf.className = 'settings-pill-btn settings-btn-portfolio';
+    pf.href = 'https://uditha-anuhas.vercel.app/';
+    pf.target = '_blank';
+    pf.rel = 'noopener noreferrer';
+    pf.title = 'Visit Developer Portfolio';
+    pf.innerHTML = `
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span>Portfolio</span>
+    `;
+
     const fb = document.createElement('a');
-    fb.className = 'settings-pill-btn';
-    fb.href = 'mailto:feedback@auratab.app?subject=AuraTab%20Feedback';
+    fb.className = 'settings-pill-btn settings-btn-feedback';
+    fb.href = 'feedback.html';
     fb.target = '_blank';
     fb.rel = 'noopener noreferrer';
+    fb.title = 'Send Feedback';
     fb.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#c084fc">
         <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6.5 9c-.83 0-1.5-.67-1.5-1.5S12.67 8 13.5 8s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm-5 0c-.83 0-1.5-.67-1.5-1.5S7.67 8 8.5 8 10 8.67 10 9.5 9.33 11 8.5 11z"/>
       </svg>
       <span>Feedback</span>
     `;
 
     wrap.appendChild(gh);
+    wrap.appendChild(pf);
     wrap.appendChild(fb);
     return wrap;
   }

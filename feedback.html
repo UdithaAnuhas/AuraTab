@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraTab - Feedback & Support</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png">
+  <link rel="icon" type="image/png" href="icons/Icon.png">
+
+  <!-- Theme bootstrap: applies cached theme before first paint -->
+  <script src="js/theme-bootstrap.js"></script>
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/feedback.css">
+</head>
+
+<body class="feedback-body">
+  <!-- Dynamic ambient aurora glow elements -->
+  <div class="feedback-bg-glow" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <main class="feedback-container">
+    <!-- Header -->
+    <header class="feedback-header">
+      <div class="feedback-top-nav">
+        <a href="newtab.html" class="back-link" title="Return to new tab dashboard">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Dashboard</span>
+        </a>
+
+        <!-- Interactive Developer Portfolio Chip -->
+        <a href="https://uditha-anuhas.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-chip" title="Visit Developer Portfolio">
+          <span class="portfolio-dot" aria-hidden="true"></span>
+          <span class="portfolio-name">Uditha Anuhas</span>
+          <span class="portfolio-badge">Portfolio ↗</span>
+        </a>
+      </div>
+
+      <div class="feedback-brand-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </div>
+
+      <h1 class="feedback-title">Send Your Feedback</h1>
+      <p class="feedback-subtitle">
+        Have an idea, found a bug, or want to suggest an improvement? Your message goes directly to my personal inbox.
+      </p>
+
+      <!-- Prominent Showcase Star on GitHub Banner -->
+      <div class="star-github-showcase">
+        <div class="showcase-content">
+          <div class="showcase-star-badge" aria-hidden="true">⭐</div>
+          <div class="showcase-text">
+            <div class="showcase-title">
+              <span>Support AuraTab</span>
+            </div>
+            <div class="showcase-subtitle">If you enjoy using AuraTab, star the repository to support development!</div>
+          </div>
+        </div>
+        <a href="https://github.com/UdithaAnuhas/AuraTab" target="_blank" rel="noopener noreferrer" class="showcase-star-btn" title="Star AuraTab on GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0f172a">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+          <span>Star on GitHub</span>
+        </a>
+      </div>
+    </header>
+
+    <form id="feedback-form" onsubmit="return false;">
+      <!-- Category Selection -->
+      <div class="form-group">
+        <label class="form-label">
+          <span>Feedback Category</span>
+          <span class="form-hint" id="category-hint">Select a topic</span>
+        </label>
+        <div class="category-chips" role="radiogroup" aria-label="Feedback Category">
+          <button type="button" class="category-chip active" data-category="General" role="radio" aria-checked="true">
+            <span class="chip-icon">💬</span>
+            <span>General</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Feature Idea" role="radio" aria-checked="false">
+            <span class="chip-icon">✨</span>
+            <span>Feature Idea</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Bug Report" role="radio" aria-checked="false">
+            <span class="chip-icon">🐛</span>
+            <span>Bug Report</span>
+          </button>
+          <button type="button" class="category-chip" data-category="Improvement" role="radio" aria-checked="false">
+            <span class="chip-icon">⚡</span>
+            <span>Performance</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Star Rating -->
+      <div class="form-group">
+        <label class="form-label">
+          <span>How is your experience with AuraTab?</span>
+          <span class="rating-hint" id="rating-hint">5 Stars - Outstanding!</span>
+        </label>
+        <div class="star-rating-box">
+          <div class="star-rating" id="star-rating-container" role="radiogroup" aria-label="Rating">
+            <button type="button" class="star-btn" data-star="1" aria-label="1 star">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </button>
+            <button type="button" class="star-btn" data-star="2" aria-label="2 stars">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </button>
+            <button type="button" class="star-btn" data-star="3" aria-label="3 stars">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </button>
+            <button type="button" class="star-btn" data-star="4" aria-label="4 stars">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </button>
+            <button type="button" class="star-btn" data-star="5" aria-label="5 stars">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </button>
+          </div>
+          <div class="star-feedback-badge" id="star-feedback-badge">⭐ Top Rated!</div>
+        </div>
+      </div>
+
+      <!-- Name & Email Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="fb-name">Your Name <span class="optional">(optional)</span></label>
+          <input type="text" id="fb-name" class="form-input" placeholder="e.g. Alex" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fb-email">Your Email <span class="optional">(optional, for replies)</span></label>
+          <input type="email" id="fb-email" class="form-input" placeholder="you@example.com" autocomplete="email">
+        </div>
+      </div>
+
+      <!-- Subject -->
+      <div class="form-group">
+        <label class="form-label" for="fb-subject">Subject</label>
+        <input type="text" id="fb-subject" class="form-input" placeholder="e.g. [General] Loving the glassmorphic theme!">
+      </div>
+
+      <!-- Message Textarea with Dynamic Context Placeholder -->
+      <div class="form-group">
+        <label class="form-label" for="fb-message">
+          <span>Message</span>
+          <span class="optional" id="char-count">0 characters</span>
+        </label>
+        <textarea id="fb-message" class="form-textarea" placeholder="Tell us what's working well, what's missing, or describe any issue you experienced..." required></textarea>
+      </div>
+
+      <!-- Environment Diagnostics Box -->
+      <div class="diagnostics-box">
+        <div class="diagnostics-header">
+          <label for="fb-diag-toggle" class="diag-label">
+            <input type="checkbox" id="fb-diag-toggle" checked>
+            <span class="diag-title">Attach anonymous system info</span>
+          </label>
+          <span class="diag-pill">v1.0.0</span>
+        </div>
+        <div class="diagnostics-details" id="diag-details">
+          Detecting system details...
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="feedback-actions">
+        <div class="primary-actions">
+          <button type="button" class="btn-send" id="btn-send" title="Send directly via default mail client">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            <span>Send via Email</span>
+          </button>
+
+          <button type="button" class="btn-gmail" id="btn-gmail" title="Compose directly in Gmail web in one click">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>Open in Gmail</span>
+          </button>
+        </div>
+
+        <div class="secondary-actions">
+          <button type="button" class="btn-subtle" id="btn-copy" title="Copy formatted feedback report to clipboard">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy Text</span>
+          </button>
+
+          <a href="https://github.com/UdithaAnuhas/AuraTab/issues/new" target="_blank" rel="noopener noreferrer" class="btn-subtle" id="btn-github" title="Create an issue on GitHub">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub Issues</span>
+          </a>
+
+          <a href="mailto:anuhas.ekanayaka320@gmail.com" class="btn-subtle" title="Direct email to anuhas.ekanayaka320@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Direct Email</span>
+          </a>
+        </div>
+      </div>
+    </form>
+
+    <!-- Footer Developer Signature -->
+    <footer class="feedback-footer">
+      <span>Crafted by <a href="https://uditha-anuhas.vercel.app/" target="_blank" rel="noopener noreferrer">Uditha Anuhas</a></span>
+      <span class="footer-separator">•</span>
+      <a href="https://uditha-anuhas.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+      <span class="footer-separator">•</span>
+      <a href="https://github.com/UdithaAnuhas/AuraTab" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
+  </main>
+
+  <!-- Email Provider Chooser Modal -->
+  <div class="email-modal-backdrop" id="email-modal" role="dialog" aria-modal="true" aria-labelledby="email-modal-title" style="display: none;">
+    <div class="email-modal-card">
+      <div class="email-modal-header">
+        <div class="email-modal-title-box">
+          <div class="email-modal-icon" aria-hidden="true">✉️</div>
+          <div>
+            <h3 class="email-modal-title" id="email-modal-title">Send Your Feedback</h3>
+            <p class="email-modal-desc">Recipient: <strong>anuhas.ekanayaka320@gmail.com</strong></p>
+          </div>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="email-provider-grid">
+        <!-- 1. Gmail Web (Most popular & reliable) -->
+        <button type="button" class="provider-option-btn provider-gmail" id="prov-gmail" title="Open in Gmail web">
+          <div class="prov-icon-wrap prov-icon-gmail">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <div class="prov-info">
+            <div class="prov-name-row">
+              <span class="prov-name">Gmail (Web)</span>
+              <span class="prov-badge">Recommended</span>
+            </div>
+            <span class="prov-sub">Opens compose window directly in browser in 1 click</span>
+          </div>
+          <span class="prov-arrow">↗</span>
+        </button>
+
+        <!-- 2. Outlook / Hotmail Web -->
+        <button type="button" class="provider-option-btn" id="prov-outlook" title="Open in Outlook.com">
+          <div class="prov-icon-wrap prov-icon-outlook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 3H3C1.9 3 1 3.9 1 5v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 4l-9 5.6L3 7V5l9 5.6L21 5v2z"/>
+            </svg>
+          </div>
+          <div class="prov-info">
+            <span class="prov-name">Outlook.com / Hotmail</span>
+            <span class="prov-sub">Opens Outlook web composer in browser</span>
+          </div>
+          <span class="prov-arrow">↗</span>
+        </button>
+
+        <!-- 3. Default Desktop Mail App -->
+        <button type="button" class="provider-option-btn" id="prov-default" title="Open in Windows Mail, Outlook App, or Apple Mail">
+          <div class="prov-icon-wrap prov-icon-desktop">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <div class="prov-info">
+            <span class="prov-name">Default Mail App</span>
+            <span class="prov-sub">Windows Mail, Outlook Desktop, or Thunderbird (mailto:)</span>
+          </div>
+          <span class="prov-arrow">↗</span>
+        </button>
+
+        <!-- 4. Copy to Clipboard -->
+        <button type="button" class="provider-option-btn" id="prov-copy" title="Copy full email details to clipboard">
+          <div class="prov-icon-wrap prov-icon-copy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </div>
+          <div class="prov-info">
+            <span class="prov-name">Copy to Clipboard</span>
+            <span class="prov-sub">Copies email address, subject, and message text</span>
+          </div>
+          <span class="prov-arrow">📋</span>
+        </button>
+      </div>
+
+      <div class="email-modal-footer">
+        <span id="modal-status-text">Select your preferred email service to send immediately.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="feedback-toast" id="feedback-toast" role="status" aria-live="polite"></div>
+
+  <script src="js/feedback.js"></script>
+</body>
+
+</html>

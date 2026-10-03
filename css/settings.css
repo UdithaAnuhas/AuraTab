@@ -204,43 +204,114 @@
 
 /* Top Action Pill Buttons */
 .settings-top-actions {
-  display: flex;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .settings-pill-btn {
-  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: #1b63d9;
+  gap: 7px;
   color: #ffffff;
-  padding: 12px 18px;
-  border-radius: 16px;
-  font-size: 15px;
+  padding: 10px 8px;
+  border-radius: var(--radius-md, 12px);
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 14px rgba(27, 99, 217, 0.3);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-}
-
-.settings-pill-btn:hover {
-  background: #2372f0;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(27, 99, 217, 0.45);
-  color: #ffffff;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .settings-pill-btn:active {
-  transform: translateY(1px);
+  transform: translateY(0) scale(0.98);
 }
 
 .settings-pill-btn svg {
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.settings-pill-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* GitHub Glowing Button */
+.settings-btn-github {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.14) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 2px 10px rgba(251, 191, 36, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.settings-btn-github svg {
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.65));
+}
+
+.settings-btn-github:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.24) 0%, rgba(245, 158, 11, 0.12) 100%);
+  border-color: rgba(251, 191, 36, 0.65);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Portfolio Glowing Button */
+.settings-btn-portfolio {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.05) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.settings-btn-portfolio svg {
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.65));
+}
+
+.settings-btn-portfolio:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.24) 0%, rgba(14, 165, 233, 0.12) 100%);
+  border-color: rgba(56, 189, 248, 0.65);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Feedback Glowing Button */
+.settings-btn-feedback {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.14) 0%, rgba(168, 85, 247, 0.05) 100%);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 2px 10px rgba(192, 132, 252, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.settings-btn-feedback svg {
+  filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.65));
+}
+
+.settings-btn-feedback:hover {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.24) 0%, rgba(168, 85, 247, 0.12) 100%);
+  border-color: rgba(192, 132, 252, 0.65);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(192, 132, 252, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Light Theme Adjustments */
+[data-theme="light"] .settings-btn-github {
+  color: #854d0e;
+  border-color: rgba(234, 179, 8, 0.4);
+}
+[data-theme="light"] .settings-btn-portfolio {
+  color: #0369a1;
+  border-color: rgba(14, 165, 233, 0.4);
+}
+[data-theme="light"] .settings-btn-feedback {
+  color: #6b21a8;
+  border-color: rgba(168, 85, 247, 0.4);
 }
 
 /* Card Section Wrapper */
